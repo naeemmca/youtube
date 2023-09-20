@@ -6,7 +6,7 @@ phases:
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 133893531589.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
-      - docker build -t youtube .
+      - docker build -t youtube:latest .
       - docker tag youtube:latest 133893531589.dkr.ecr.us-east-1.amazonaws.com/youtube:latest
   post_build:
     commands:
